@@ -1,0 +1,41 @@
+import math
+
+def gcd(m,n):
+    if (n==0):
+        abs(m)
+    else:
+        return gcd(n,m%n)
+
+
+p =  int(input("Enter a prime number :"))
+q =  int(input("Enter a prime number :"))
+
+n=p*q
+
+phi_n=(p-1)*(q-1)
+e=2
+
+while (e<phi_n):
+
+	
+	if(gcd(e,phi_n) == 1):
+		break
+	else:
+		e=e+1
+
+
+m=int(input("Enter a message : "))
+d = (m*phi_n + 1) / e 
+print(d)
+
+print("Message data :", m)
+
+
+c = pow(m, e)
+c = c% n
+print("Cypher text is :", c)
+
+
+r= pow(c, d)
+r= m% n
+print("previous message sent = ", r)
